@@ -35,7 +35,10 @@ const SearchInput = styled.input`
   background-image:none;
   background-color:transparent;
   margin-right: 71px;
-  
+  &:focus{
+    outline:none;
+    color:#000000;
+  }
 `
 const Icon = styled(FontAwesomeIcon)`
   margin-left: 7px;
