@@ -4,7 +4,7 @@ import Button from './Button'
 import ComicViewer from './ComicViewer'
 
 const Container = styled.div`
-  height: 500px;
+  height: auto;
   width: 800px;
   margin: 0 auto;
   background-color: #f4f4f4;
@@ -14,7 +14,6 @@ const Wraper = styled.div`
   justify-content:space-between;
   align-items: center;
   margin-right:26px;
-  
 `
 const LastComics = styled.span`
   width: 183px;
@@ -48,7 +47,7 @@ function Latest() {
              </LastComics>
              <Button bkcolor={'#0277BD'} collor={'#FFFFFF'} text={'See All'}/>
           </Wraper>
-          <Updates> 
+          <Updates > 
               <ComicViewer/>  
               <ComicViewer/>  
               <ComicViewer/>  

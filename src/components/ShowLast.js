@@ -8,6 +8,7 @@ const ShowBox = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 107px;
+  margin-bottom: 18px;
 `
 const ShowTitle = styled.div`
   width: 200px;
