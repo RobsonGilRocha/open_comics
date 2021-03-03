@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+@font-face {
+  font-family: 'Krona One';
+  src: url('./util/fonts/KronaOne.ttf'); /* IE9 Compat Modes */
+  src: local('KronaOne'), local('KronaOne'),
+       url('./util/fonts/KronaOne.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./util/fonts/KronaOne.ttf') format('woff2'), /* Super Modern Browsers */
+       url('./util/fonts/KronaOne.ttf') format('woff'), /* Modern Browsers */
+       url('./util/fonts/KronaOne.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./util/fonts/KronaOne.ttf#KronaOne') format('svg'); /* Legacy iOS */
+}
+
+body{
+  background-color: #418BCA;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
