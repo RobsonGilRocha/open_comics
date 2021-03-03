@@ -9,7 +9,6 @@ const Btn = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 8px;
   cursor:pointer;
 `
 const TextButton = styled.span`
@@ -20,6 +19,8 @@ const TextButton = styled.span`
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
+  text-align:center;
+  margin: 8px;
   color: ${({collor}) => collor};
   cursor:pointer;
 `
