@@ -13,11 +13,19 @@ const Row = styled.div`
   margin-top:30px;
 `
 const Line = styled.div`
-  height:2px;
-  width:558px;
-  background-color:gray;
+  width: 558px;
+  height: 2px;
+  display:flex;
+  align-items:center;
+  background: rgba(196, 196, 196, 0.5);
   border-radius: 1px;
   margin-right:32px;
+`
+const LineContent = styled.div`
+  width: 116.49px;
+  height: 2px;
+  background:#2D3333;
+  border-radius:1px;
 `
 const Title = styled.div`
   font-family: 'Nunito Sans';
@@ -32,24 +40,37 @@ const Title = styled.div`
   height: 48px;
 `
 const ComicContent = styled.div`
-  height:220px;;
+  height:auto;
   display:flex;
   align-items:center;
   margin-top: 12px;
   margin-left: 27px;
-  overflow-x:hidden;
+  overflow:overlay;
+  scroll-behavior:smooth;
+  &::-webkit-scrollbar{  //Chrome, Safari and Opera
+    display:none;
+  }
+  -ms-overflow-style:none;  //Chrome, Safari and Opera
+  scrollbar-width:none;
 `
 
 function HorizonScroll() {
+
   return (
     <Container>
       <Row>
         <Title>
           Batman
         </Title>
-        <Line/>
+        <Line>
+          <LineContent/>
+        </Line>
       </Row>
       <ComicContent>
+        <ComicViewer/>
+        <ComicViewer/>
+        <ComicViewer/>
+        <ComicViewer/>
         <ComicViewer/>
         <ComicViewer/>
         <ComicViewer/>
