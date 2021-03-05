@@ -69,7 +69,7 @@ function Header() {
       <Container>
           <Row>
               <TitleBox>
-                <Title>OI do Roberto</Title>
+                <Title>OPENCOMICS</Title>
               </TitleBox>
               <NavHome>
                 Home
