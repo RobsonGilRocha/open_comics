@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ComicViewer from './ComicViewer'
+import {getBatman} from '../services/batman'
 
 const Container = styled.div` // temporario.
   height: 300px;
@@ -56,6 +57,18 @@ const ComicContent = styled.div`
 
 function HorizonScroll() {
 
+  const [batman, setBatman] = useState({})
+  const key = useState('')
+  const limit = useState('')
+
+  useEffect(()=>{
+     async function fetchComicBatman(){
+       const response = await getBatman(key,limit)
+       setBatman(response.data)
+     }
+     fetchComicBatman()
+  },[key,limit])
+
   return (
     <Container>
       <Row>
@@ -67,13 +80,19 @@ function HorizonScroll() {
         </Line>
       </Row>
       <ComicContent>
-        <ComicViewer/>
-        <ComicViewer/>
-        <ComicViewer/>
-        <ComicViewer/>
-        <ComicViewer/>
-        <ComicViewer/>
-        <ComicViewer/>
+          {
+            batman.results && batman.results.map((comic, index) => 
+            <ComicViewer 
+             key={index}
+             image={comic.image.original_url}
+             date={comic.cover_date}
+             title={comic.volume.name}
+             issue={comic.issue_number}
+             description={comic.name}
+
+            />)
+          }
+        
       </ComicContent>
     </Container>
   );

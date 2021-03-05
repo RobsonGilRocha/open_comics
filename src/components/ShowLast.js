@@ -49,10 +49,10 @@ const ShowDescription = styled.div`
   color: #FFFFFF;
   background-color:#56210980;
 `
-function ShowLast() {
+function ShowLast({title}) {
   return(
       <ShowBox>
-          <ShowTitle>ShowTitle</ShowTitle>  
+          <ShowTitle >{title}</ShowTitle>  
           <ShowSubTitle>ShowSubTitle</ShowSubTitle>
           <ShowDescription>ShowDescription</ShowDescription>
           <Button bkcolor={'#FFFFFF'} collor={'#0277BD'} text={'Read'}/>  

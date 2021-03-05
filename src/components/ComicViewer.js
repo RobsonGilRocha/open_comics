@@ -11,9 +11,10 @@ const ContainerViewer = styled.div`
 `
 
 const ImgViewer = styled.div`
+  background-image: ${({image})=> `url(${image})`};
+  background-size:cover;
   height:166px;
   width:127px;
-  background-color: blue; // temporario.
 `
 const ContentWraper = styled.div`
   display:flex;
@@ -31,14 +32,14 @@ const AboutText = styled.span`
   display: flex;
   align-items: center;
 `
-function ComicViewer() {
+function ComicViewer({image, date, title, issue, description}) {
   return (
       <ContainerViewer>
-          <ImgViewer/>
+          <ImgViewer image={image}/>
           <ContentWraper>
-              <AboutText size={5}>asdasdasd</AboutText>
-              <AboutText size={12} weight={900}>asdasdasdas</AboutText>
-              <AboutText size={5} weight={600}>asdasdasd</AboutText>
+              <AboutText size={5}>{date}</AboutText>
+              <AboutText size={12} weight={900}>{title} #{issue}</AboutText>
+              <AboutText size={5} weight={600}>{description}</AboutText>
           </ContentWraper>
       </ContainerViewer>
   );
