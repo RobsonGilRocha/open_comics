@@ -2,18 +2,15 @@ import React,{useEffect,useState} from 'react';
 import styled from 'styled-components';
 import Search from './Search';
 import ShowLast from './ShowLast'
-import bat from '../images/Bat.png'
 import Router from './Router'
 import {getComics} from '../services/comics'
+import HeaderImage from './HeaderImage';
 
 const Container = styled.div`
   width: 800px;
   height: 300px;
   max-height: 300px;
-  background-image:url(${bat});
-  background-position: center;
-  background-size: cover;
- 
+  
 `
 const Row = styled.div`
   display: flex;
@@ -30,7 +27,6 @@ const Title = styled.span`
 const TitleBox = styled.div`
   width: 292px;
   height: 49px;
-  background-color:#89786580;
   display: flex;
   align-items: center;
   margin-left:37px;
@@ -39,32 +35,42 @@ const TitleBox = styled.div`
 function Header() {
 
   const [comics, setComics] = useState({})
-  const key = useState('')
-  const limit = useState('')
-
+  const [limit, setLimit] = useState('1')
+ 
   useEffect(()=>{
      async function fetchComics(){
-       const response = await getComics(key,comics,limit)
+       const response = await getComics(limit)
        setComics(response.data)
+       
      }
      fetchComics()
-  },[key,comics,limit])
+  },[ limit])
+
 
   return (
       <Container>
-          <Row>
+          {
+            comics.results && comics.results.map((comic, index) =>
+              <HeaderImage key={index} image={comic.image.original_url}/>
+            )
+          }
+          <Row >
               <TitleBox>
                 <Title>OPENCOMICS</Title>
               </TitleBox>
               <Router/>
               <Search/>
           </Row>
-          {comics.results.map && comics.results.map((comic,index) => 
+          {comics.results && comics.results.map((comic, index) =>            
             <ShowLast 
-            kay={index}
-            title={comic.volume.name}
-            />
-            ) }
+             key={index}
+             title={comic.volume.name}
+             issue={comic.issue_number}
+             subtitle={comic.name}
+             description={comic.description}
+            />,
+           )
+          }
           
       </Container>
   );

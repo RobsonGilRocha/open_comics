@@ -4,14 +4,13 @@ import Button from './Button'
 
 const ShowBox = styled.div`
   border-color:black;
-  background-color:#23fffc80;
   align-items: center;
   justify-content: center;
   margin-left: 107px;
   margin-bottom: 18px;
 `
 const ShowTitle = styled.div`
-  width: 200px;
+  width: 0 auto;
   height: 50px;
   font-family: 'Nunito Sans';
   font-style: normal;
@@ -21,7 +20,6 @@ const ShowTitle = styled.div`
   display: flex;
   align-items: center;
   color: #FFFFFF;
-  background-color:#ccfffc80;
 `
 const ShowSubTitle = styled.div`
   width: 300px;
@@ -34,7 +32,6 @@ const ShowSubTitle = styled.div`
   display: flex;
   align-items: center;
   color: #FFFFFF;
-  background-color:#ffccff80;
 `
 const ShowDescription = styled.div`
   width: 400px;
@@ -46,15 +43,14 @@ const ShowDescription = styled.div`
   line-height: 14px;
   display: flex;
   align-items: center;
-  color: #FFFFFF;
-  background-color:#56210980;
+  color: #FFFFFF; 
 `
-function ShowLast({title}) {
+function ShowLast({image, title, issue, subtitle, description }) {
   return(
-      <ShowBox>
-          <ShowTitle >{title}</ShowTitle>  
-          <ShowSubTitle>ShowSubTitle</ShowSubTitle>
-          <ShowDescription>ShowDescription</ShowDescription>
+      <ShowBox >
+          <ShowTitle >{title} #{issue}</ShowTitle>  
+          <ShowSubTitle>{subtitle ? {subtitle} : 'Sorry we dont have a subtitle'}</ShowSubTitle>
+          <ShowDescription>{description ? {description} : 'Sorry we dont have a description'}</ShowDescription>
           <Button bkcolor={'#FFFFFF'} collor={'#0277BD'} text={'Read'}/>  
       </ShowBox>
   ) ;
