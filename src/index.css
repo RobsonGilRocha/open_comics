@@ -3,13 +3,13 @@
 
 @font-face {
   font-family: 'Krona One';
-  src: url('./util/fonts/KronaOne.ttf'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/KronaOne.ttf'); /* IE9 Compat Modes */
   src: local('KronaOne'), local('KronaOne'),
-       url('./util/fonts/KronaOne.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('./util/fonts/KronaOne.ttf') format('woff2'), /* Super Modern Browsers */
-       url('./util/fonts/KronaOne.ttf') format('woff'), /* Modern Browsers */
-       url('./util/fonts/KronaOne.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('./util/fonts/KronaOne.ttf#KronaOne') format('svg'); /* Legacy iOS */
+       url('./assets/fonts/KronaOne.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/KronaOne.ttf') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/KronaOne.ttf') format('woff'), /* Modern Browsers */
+       url('./assets/fonts/KronaOne.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./assets/fonts/KronaOne.ttf#KronaOne') format('svg'); /* Legacy iOS */
 }
 
 body{
