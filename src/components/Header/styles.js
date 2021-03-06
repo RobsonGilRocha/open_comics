@@ -4,7 +4,8 @@ export const Container = styled.div`
   width: 800px;
   height: 300px;
   max-height: 300px;
-  
+  background-color:darkgreen;
+  opacity:0.9;
 `
 export const Row = styled.div`
   display: flex;
