@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerViewer = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   max-width: 173px;
-  height: 258px;
+  max-height: 258px;
 `
 
 export const ImgViewer = styled.div`
@@ -34,6 +34,12 @@ export const Wrapper = styled.div`
   display:flex;
   z-index:999;
   width: 135px;
-  height: 258px;
+  height: 231px;
   padding: 13px 20px;
+`
+export const ContentWrapper = styled.div`
+  justify-content:space-between;
+  display:flex;
+  flex-direction:column;
+
 `

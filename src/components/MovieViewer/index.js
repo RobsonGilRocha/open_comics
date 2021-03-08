@@ -6,7 +6,8 @@ import {
       ImgViewer,
       ImgOpacity,
       AboutText,
-      Wrapper
+      Wrapper,
+      ContentWrapper
 } from './styles'
 
 
@@ -16,11 +17,16 @@ function MovieViewer({image, date, title, description}) {
         <ImgViewer image={image}/>
         <ImgOpacity/>
         <Wrapper>
-          <AboutText size={8} color={'#cccccc'}>{date && dayjs(date).format('DD/MM/YYYY')}</AboutText>
-          <Separator y={3}/>
+        <ContentWrapper>
+          <ContentWrapper>
+          <AboutText size={8} color={'#cccccc'}>Relase date: {date && dayjs(date).format('DD/MM/YYYY')}</AboutText>
+          </ContentWrapper>
+          <ContentWrapper>
           <AboutText size={12} weight={900} color={'#ffffff'}>{title} </AboutText>
-          <Separator y={2}/>
+          
           <AboutText size={8} color={'#ffffff'}>{description}</AboutText>
+          </ContentWrapper>
+          </ContentWrapper>
         </Wrapper>
     </ContainerViewer>
   );

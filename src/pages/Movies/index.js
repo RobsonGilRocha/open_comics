@@ -2,17 +2,21 @@ import React, {useState, useEffect} from 'react';
 import { Header } from '../../components'
 import MovieList from '../../components/MovieList' 
 import {Container} from './styles'
-import { getMovies } from '../../services/movies'
+import { getMovies, getMovie } from '../../services/movies'
 
 function Movies() {
   
+  const [movie, setMovie] =useState({})
   const [movies, setMovies] = useState({})
   const [limit, setLimit] = useState('1')
+  const size = 9
 
   useEffect(()=>{
     async function  fetchMovies(){
-      const response = await getMovies(limit)
+      const response = await getMovies(size)
+      const resp = await getMovie(limit)
       setMovies(response.data)
+      setMovie(resp.data)
     }
     fetchMovies()
   },[limit])
@@ -20,8 +24,8 @@ function Movies() {
 
   return (
     <Container>
-        <Header items={movies}/>
-        <MovieList/>
+        <Header items={movie}/>
+        <MovieList items={movies}/>
     </Container>
   );
 }

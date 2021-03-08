@@ -1,36 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import MovieViewer from '../../components/MovieViewer'
 import Separator from '../../components/Separator'
-import { getComics } from '../../services/comics'
 import { MovieLast } from './styles'
 
 
-function MovieList() {
-  
-  const [comics, setComics] = useState({})
-  const [limit, setLimit] = useState('9')
- 
-  useEffect(()=>{
-     async function fetchComics(){
-       const response = await getComics(limit)
-       setComics(response.data)
-       
-     }
-     fetchComics()
-  },[ limit])
+function MovieList({items}) {
 
   return (
     <MovieLast>
       {
-        comics.results && comics.results.map((comic, index) => 
+        items.results && items.results.map((item, index) => 
           <>
             <MovieViewer 
               key={index}
-              image={comic.image.original_url}
-              date={comic.cover_date}
-              title={comic.volume.name}
-              issue={comic.issue_number}
-              description={comic.name}
+              image={item.image.original_url}
+              date={item.release_date}
+              title={item.name}
+              description={item.deck}
             /> 
             <Separator y={56}/> 
           </>
