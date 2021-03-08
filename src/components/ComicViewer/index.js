@@ -17,7 +17,7 @@ function ComicViewer({image, date, title, issue, description}) {
           <ImgViewer image={image}/>
           <ContentWraper>
             <Wrapper>
-                <AboutText size={8} color={'#888888'}>{dayjs(date).format('DD/MM/YYYY')}</AboutText>
+                <AboutText size={8} color={'#888888'}>{date && dayjs(date).format('DD/MM/YYYY')}</AboutText>
                 <Separator y={3}/>
                 <AboutText size={12} weight={900} color={'#3E4648'}>{title} #{issue}</AboutText>
                 <Separator y={2}/>

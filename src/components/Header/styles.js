@@ -25,7 +25,7 @@ export const ContainerOpacity = styled.div`
   height: 300px;
   max-height: 300px;
   z-index:100;
-  background:rgba(52, 69, 76, .97)
+  background:rgba(52, 69, 76, .97);
 `;
 
 export const Row = styled.div`
