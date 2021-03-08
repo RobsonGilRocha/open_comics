@@ -12,8 +12,8 @@ function ShowLast({ title, issue, subtitle, description }) {
   return(
       <ShowBox >
           <ShowTitle >{title} #{issue}</ShowTitle>  
-          <ShowSubTitle>{subtitle ? {subtitle} : 'Sorry we dont have a subtitle'}</ShowSubTitle>
-          <ShowDescription>{description ? {description} : 'Sorry we dont have a description'}</ShowDescription>
+          <ShowSubTitle>{subtitle && subtitle }</ShowSubTitle>
+          <ShowDescription>{description && description}</ShowDescription>
           <Button bkcolor={'#FFFFFF'} collor={'#0277BD'} text={'Read'}/>  
       </ShowBox>
   ) ;

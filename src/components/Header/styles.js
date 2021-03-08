@@ -4,9 +4,30 @@ export const Container = styled.div`
   width: 800px;
   height: 300px;
   max-height: 300px;
-  background-color:darkgreen;
-  opacity:0.9;
 `
+export const Wrapper = styled.div`
+  position:absolute;
+  z-index:999;
+`
+export const ContainerImage = styled.div`
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  max-height: 300px;
+  background: ${({ image }) => `url(${image})`} no-repeat center;
+  background-size: cover;
+  z-index:25;
+`;
+
+export const ContainerOpacity = styled.div`
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  max-height: 300px;
+  z-index:100;
+  background:rgba(52, 69, 76, .97)
+`;
+
 export const Row = styled.div`
   display: flex;
   align-items: center;

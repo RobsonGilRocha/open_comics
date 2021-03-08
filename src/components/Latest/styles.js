@@ -31,6 +31,6 @@ export const Updates = styled.div`
   flex-direction:column;
   align-items:center;
   margin-top: 11px;
-  margin-left: 59px;
+  padding-left:17px;
   flex-wrap:wrap;
 `

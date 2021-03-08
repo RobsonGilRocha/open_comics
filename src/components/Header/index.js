@@ -1,15 +1,19 @@
 import React,{useEffect,useState} from 'react';
 import {getComics} from '../../services/comics'
 import {
-  HeaderImage,
   Search,
-  ShowLast
+  ShowLast,
+  Menu,
+  Separator
 } from '../';
 import {
   Container,
   Row,
   Title,
   TitleBox,
+  Wrapper,
+  ContainerImage,
+  ContainerOpacity,
 } from './styles'
 
 
@@ -27,33 +31,36 @@ function Header() {
      fetchComics()
   },[ limit])
 
-
   return (
-      <Container>
-          {
-            comics.results && comics.results.map((comic, index) =>
-              <HeaderImage key={index} image={comic.image.original_url}/>
-            )
-          }
-          <Row >
-              <TitleBox>
-                <Title>OPENCOMICS</Title>
-              </TitleBox>
-              
-              <Search/>
-          </Row>
-          {comics.results && comics.results.map((comic, index) =>            
+    <Container>
+        {
+          comics.results && comics.results.map((comic, index) =>
+            <ContainerImage key={index} image={comic.image.original_url}/>
+          )
+        }
+        <ContainerOpacity/>
+        <Wrapper>
+        <Row >
+            <TitleBox>
+              <Title>OPENCOMICS</Title>
+            </TitleBox>
+            <Menu/>
+            <Separator x={40}/>
+            <Search/>
+        </Row>
+        {
+          comics.results && comics.results.map((comic, index) =>            
             <ShowLast 
-             key={index}
-             title={comic.volume.name}
-             issue={comic.issue_number}
-             subtitle={comic.name}
-             description={comic.description}
+              key={index}
+              title={comic.volume.name}
+              issue={comic.issue_number}
+              subtitle={comic.name}
+              description={comic.description}
             />,
-           )
-          }
-          
-      </Container>
+          )
+        }
+        </Wrapper>
+    </Container>
   );
 }
 

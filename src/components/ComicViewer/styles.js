@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerViewer = styled.div`
   display:flex;
   width: 252px;
-  height: 166px;
+  max-height: 166px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-right:62px; 
   margin-bottom:49px;
@@ -17,17 +17,22 @@ export const ImgViewer = styled.div`
 `
 export const ContentWraper = styled.div`
   display:flex;
-  height: 166px;
   width: 125px;
+  max-height: 166px;
   flex-direction:column;
   align-items:center;
-  justify-content:space-evenly; // temporario.
+  justify-content:space-between;
+  margin: 0 auto;
+  padding: 17px 15px 5px 12px;
 `
 export const AboutText = styled.span`
   font-family:'Nunito Sans';
   font-size: ${({size}) => size}px;
   font-weight: ${({weight})=> weight};
-  line-height: 7px;
-  display: flex;
-  align-items: center;
+  color:${({color})=> color || '#FFFFFF'};
+`
+export const Wrapper = styled.div`
+  display:flex;
+  align-self:flex-start;
+  flex-direction:column;
 `

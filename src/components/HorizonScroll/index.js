@@ -14,16 +14,15 @@ import{
 function HorizonScroll() {
 
   const [batman, setBatman] = useState({})
-  const key = useState('')
-  const limit = useState('')
+  const limit = useState('10')
 
   useEffect(()=>{
      async function fetchComicBatman(){
-       const response = await getBatman(key,limit)
+       const response = await getBatman(limit)
        setBatman(response.data)
      }
      fetchComicBatman()
-  },[key,limit])
+  },[limit])
 
   return (
     <Container>
@@ -38,17 +37,15 @@ function HorizonScroll() {
       <ComicContent>
           {
             batman.results && batman.results.map((comic, index) => 
-            <ComicViewer 
-             key={index}
-             image={comic.image.original_url}
-             date={comic.cover_date}
-             title={comic.volume.name}
-             issue={comic.issue_number}
-             description={comic.name}
-
-            />)
+              <ComicViewer 
+                key={index}
+                image={comic.image.original_url}
+                date={comic.cover_date}
+                title={comic.volume.name}
+                issue={comic.issue_number}
+                description={comic.name}
+              />)
           }
-        
       </ComicContent>
     </Container>
   );
