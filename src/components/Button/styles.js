@@ -9,6 +9,11 @@ export const Btn = styled.div`
   align-items: center;
   text-align: center;
   cursor:pointer;
+  color: ${({collor}) => collor};
+  &:hover{
+    background: ${({hoverBkColor}) => hoverBkColor}; 
+    color: ${({hoverTxtColor}) => hoverTxtColor};
+  }
 `
 export const TextButton = styled.span`
   width: 102px;
@@ -20,6 +25,4 @@ export const TextButton = styled.span`
   line-height: 16px;
   text-align:center;
   margin: 8px;
-  color: ${({collor}) => collor};
-  cursor:pointer;
 `

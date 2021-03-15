@@ -6,8 +6,13 @@ import {
   
 function Button({text, collor, bkcolor}) {
   return (
-      <Btn bkcolor={bkcolor}>
-        <TextButton collor={collor}>{text}</TextButton>
+      <Btn 
+        bkcolor={bkcolor} 
+        collor={collor}
+        hoverTxtColor={bkcolor}
+        hoverBkColor={collor}
+        >
+        <TextButton >{text}</TextButton>
       </Btn>
   );
 }
