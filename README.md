@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # open_comics 
 # open_comics
 # open_comicos
+# comics
