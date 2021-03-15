@@ -71,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # revenda-api
 # open_comics 
 # open_comics
+# open_comicos
