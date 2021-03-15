@@ -13,7 +13,7 @@ function ShowLast({ title, issue, subtitle, description }) {
       <ShowBox >
         {
           (issue ? <ShowTitle >{title} #{issue}</ShowTitle> 
-          :  <ShowTitle >{title}era</ShowTitle> )
+          :  <ShowTitle >{title}</ShowTitle> )
         }
           <ShowSubTitle>{subtitle && subtitle }</ShowSubTitle>
           <ShowDescription>{description && description}</ShowDescription>
